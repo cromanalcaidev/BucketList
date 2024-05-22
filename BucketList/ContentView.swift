@@ -17,9 +17,10 @@ struct ContentView: View {
     )
     
     @State private var viewModel = ViewModel()
+    @State private var changeMode = false
     
     var body: some View {
-        VStack {
+        if viewModel.isUnlocked {
             MapReader { proxy in
                 Map(initialPosition: startPosition) {
                     ForEach(viewModel.locations) { location in
@@ -36,6 +37,7 @@ struct ContentView: View {
                         }
                     }
                 }
+                .mapStyle(changeMode ? .hybrid(elevation: .realistic) : .standard)
                 .onTapGesture { position in
                     if let coordinate = proxy.convert(position, from: .local) {
                         viewModel.addLocation(at: coordinate)
@@ -46,7 +48,21 @@ struct ContentView: View {
                         viewModel.updateLocation(location: newLocation)
                     }
                 }
+                .onLongPressGesture {
+                    changeMode.toggle()
+                }
             }
+        } else {
+            // button here to handle authetnication
+            Button("Unlock Places", action: viewModel.authenticate)
+                .padding()
+                .background(.blue)
+                .foregroundStyle(.white)
+                .clipShape(.capsule)
+                .alert("Failed to authenticate", isPresented: $viewModel.showFailAuthAlert) {
+                    Text("Please try again")
+                    Button("Ok", role: .cancel) { }
+                }
         }
     }
 }

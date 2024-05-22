@@ -60,9 +60,9 @@
 			isa = PBXGroup;
 			children = (
 				7CB171D42BFBA9AA007F8474 /* EditView.swift */,
-				7CCDEEC12BFCC9DA0086ED9C /* ContentView-ViewModel.swift */,
 				7CD8D11C2BF67CA5006CF56C /* Location.swift */,
 				7CCDEEBF2BFCA7760086ED9C /* Result.swift */,
+				7CCDEEC12BFCC9DA0086ED9C /* ContentView-ViewModel.swift */,
 				7CA586582BF27A0A00E8530F /* BucketListApp.swift */,
 				7CA5865A2BF27A0A00E8530F /* ContentView.swift */,
 				7CA5865C2BF27A0B00E8530F /* Assets.xcassets */,
@@ -291,7 +291,8 @@
 				DEVELOPMENT_TEAM = H37643XZW5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to unlock data";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Please authenticate yourself to unlock places.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -321,7 +322,8 @@
 				DEVELOPMENT_TEAM = H37643XZW5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to unlock data";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Please authenticate yourself to unlock places.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
